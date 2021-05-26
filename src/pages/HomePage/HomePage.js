@@ -23,7 +23,7 @@ class HomePage extends Component {
 
     return (
       <div>
-        <h2>Tranding today:</h2>
+        <h2>Trending today:</h2>
 
         <FilmsList films={this.state.films} />
 
