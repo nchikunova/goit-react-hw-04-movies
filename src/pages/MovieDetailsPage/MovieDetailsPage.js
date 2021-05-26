@@ -18,12 +18,11 @@ class MovieDetailsPage extends Component {
     movie: [],
     genres: [],
     error: null,
-    
   };
 
   componentDidMount() {
     const movieId = this.props.match.params.movieId;
-
+    this.setState({ isLoading: true });
     moviesApi
       .fetchMovieDetails(movieId)
       .then(data => {
@@ -68,7 +67,7 @@ class MovieDetailsPage extends Component {
 
           <div className="CardWrapper">
             <div className="Card-img">
-              <img
+            {poster_path && ( <img
                 src={
                   poster_path
                     ? `https://image.tmdb.org/t/p/w342/${poster_path}`
@@ -76,7 +75,7 @@ class MovieDetailsPage extends Component {
                 }
                 alt={original_title}
                 width="342"
-              />
+              />)}
             </div>
 
             <div className="card">
@@ -104,7 +103,6 @@ class MovieDetailsPage extends Component {
 
           <div>
             <h3>Additional information</h3>
-
             <ul className="list-group">
               <li className="list-group-item list-group-item-info">
                 <NavLink
@@ -147,7 +145,8 @@ class MovieDetailsPage extends Component {
             </Suspense>
           </div>
           {error && <h3 className="ErrorMessage">{error.message}</h3>}
-        </section>
+        </section
+        >
       </>
     );
   }
