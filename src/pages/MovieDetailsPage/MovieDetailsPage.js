@@ -132,16 +132,8 @@ class MovieDetailsPage extends Component {
             </ul>
             <Suspense fallback={<h2>Loading...</h2>}>
               <Switch>
-                <Route
-                  exact
-                  path={`${this.props.match.path}/cast`}
-                  component={Cast}
-                />
-                <Route
-                  exact
-                  path={`${this.props.match.path}/reviews`}
-                  component={Reviews}
-                />
+              <Route path="/movies/:movieId/cast" component={Cast} />
+              <Route path="/movies/:movieId/reviews" component={Reviews} />
               </Switch>
             </Suspense>
           </div>
