@@ -22,7 +22,6 @@ class MovieDetailsPage extends Component {
 
   componentDidMount() {
     const movieId = this.props.match.params.movieId;
-    this.setState({ isLoading: true });
     moviesApi
       .fetchMovieDetails(movieId)
       .then(data => {
