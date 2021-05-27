@@ -5,20 +5,20 @@ const API_KEY = 'f2539677659f743858aef093e7c82be1';
 
 const fetchPopularMovies = () => {
   return axios
-    .get(`${BASE_URL}/movie/popular?api_key=${API_KEY}&page=1`)
+    .get(`${BASE_URL}/trending/all/day?api_key=${API_KEY}`)
     .then(({ data }) => data)
     .catch(error => error);
 };
 const fetchMovieDetails = movieId => {
   return axios
-    .get(`${BASE_URL}/movie/${movieId}?api_key=${API_KEY}`)
+    .get(`${BASE_URL}/movie/${movieId}?api_key=${API_KEY}&language=en-US`)
     .then(({ data }) => data)
     .catch(error => error);
 };
 
 const fetchCast = movieId => {
   return axios
-    .get(`${BASE_URL}/movie/${movieId}/credits?api_key=${API_KEY}`)
+    .get(`${BASE_URL}/movie/${movieId}/credits?api_key=${API_KEY}&language=en-US`)
     .then(({ data }) => data)
     .catch(error => error);
 };
