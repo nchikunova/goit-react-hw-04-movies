@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import moviesApi from '../../api/movies-api';
 import './Cast.scss';
 import defaultImg from '../../images/default.jpg';
@@ -64,10 +64,12 @@ class Cast extends Component {
       </>
     );
   }
+
+  
 }
 
-Cast.propTypes = {
-  movieId: PropTypes.string,
-};
+// Cast.propTypes = {
+//   movieId: PropTypes.string,
+// };
 
 export default Cast;

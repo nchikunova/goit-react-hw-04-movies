@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import './FilmsList.scss';
 import defaultImg from '../../images/default.jpg'
 
@@ -8,7 +8,7 @@ const FilmsList = ({ films, location }) => {
   return (
     <>
       <ul className="FilmsList">
-        {films.map(({ id, title, poster_path, }) => (
+        {films.map(({ id, title, original_title, poster_path, original_name}) => (
           <li className="FilmItem" key={id}>
             <Link
               to={{
@@ -24,7 +24,7 @@ const FilmsList = ({ films, location }) => {
                 }
                 alt=""
               />
-              {title}
+        <h1 className="title">{title || original_title || original_name}</h1>
             </Link>
           </li>
         ))}
@@ -33,13 +33,13 @@ const FilmsList = ({ films, location }) => {
   );
 };
 
-FilmsList.propType = {
-  films: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.number.isRequired,
-      title: PropTypes.string,
-    }),
-  ),
-};
+// FilmsList.propType = {
+//   films: PropTypes.arrayOf(
+//     PropTypes.shape({
+//       id: PropTypes.number.isRequired,
+//       title: PropTypes.string.isRequired,
+//     }),
+//   ),
+// };
 
 export default withRouter(FilmsList);

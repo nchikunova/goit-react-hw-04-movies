@@ -1,12 +1,13 @@
 .navbar {
   height: 100px;
-  justify-content: start;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
   padding-top: 30px;
-  padding-right: 15px;
-  padding-left: 15px;
   font-size: 25px;
   background-color: #e3f2fd;
 }
+
 .nav-link {
   font-style: 20px;
   color: black;
@@ -17,4 +18,4 @@
 .active {
   color: #e5839a;
   text-decoration: underline;
-}
+}/*# sourceMappingURL=Navigation.css.map */

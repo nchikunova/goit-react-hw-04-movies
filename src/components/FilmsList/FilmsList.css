@@ -1,0 +1,35 @@
+.FilmsList {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  max-width: 1200px;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin: 0 auto;
+  margin-top: 20px;
+  list-style-type: none;
+}
+
+.FilmItem {
+  width: calc((100% - 60px)/4);
+  margin-bottom: 40px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.FilmItem:not(:nth-child(3n)) {
+  margin-right: 40px;
+}
+
+.Title {
+  -ms-flex-line-pack: center;
+      align-content: center;
+}
+
+img {
+  margin-bottom: 10px;
+  display: block;
+  height: auto;
+  width: 100%;
+}/*# sourceMappingURL=FilmsList.css.map */

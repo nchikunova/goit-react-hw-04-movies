@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import moviesApi from '../../api/movies-api'; 
 
 class Reviews extends Component {
@@ -45,8 +45,8 @@ class Reviews extends Component {
   }
 }
 
-Reviews.propTypes = {
-  movieId: PropTypes.string,
-};
+// Reviews.propTypes = {
+//   movieId: PropTypes.string,
+// };
 
 export default Reviews;
