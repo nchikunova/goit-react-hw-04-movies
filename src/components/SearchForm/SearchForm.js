@@ -1,8 +1,12 @@
 import React, { Component } from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import './SearchForm.scss';
 
 class SearchForm extends Component {
+  static propTypes = {
+    onSubmit: PropTypes.func.isRequired,
+  }
+
   state = {
     query: '',
   };
@@ -47,9 +51,5 @@ class SearchForm extends Component {
     );
   }
 }
-
-// SearchForm.propTypes = {
-//   onSubmit: PropTypes.func.isRequired,
-// };
 
 export default SearchForm;

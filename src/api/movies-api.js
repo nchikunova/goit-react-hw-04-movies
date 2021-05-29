@@ -5,7 +5,7 @@ const API_KEY = 'f2539677659f743858aef093e7c82be1';
 
 const fetchPopularMovies = () => {
   return axios
-    .get(`${BASE_URL}/trending/all/day?api_key=${API_KEY}`)
+    .get(`${BASE_URL}/trending/movie/day?api_key=${API_KEY}`)
     .then(({ data }) => data)
     .catch(error => error);
 };

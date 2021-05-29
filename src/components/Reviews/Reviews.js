@@ -1,8 +1,13 @@
 import React, { Component } from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import moviesApi from '../../api/movies-api'; 
 
 class Reviews extends Component {
+  
+  static propTypes = {
+    movieId: PropTypes.string,
+  };
+
   state = {
     reviews: [],
     error: null,
@@ -44,9 +49,5 @@ class Reviews extends Component {
     );
   }
 }
-
-// Reviews.propTypes = {
-//   movieId: PropTypes.string,
-// };
 
 export default Reviews;
