@@ -1,7 +1,7 @@
 import axios from 'axios';
+import { API_KEY } from './api-key';
 
 const BASE_URL = 'https://api.themoviedb.org/3';
-const API_KEY = 'f2539677659f743858aef093e7c82be1';
 
 const fetchPopularMovies = () => {
   return axios
@@ -18,7 +18,9 @@ const fetchMovieDetails = movieId => {
 
 const fetchCast = movieId => {
   return axios
-    .get(`${BASE_URL}/movie/${movieId}/credits?api_key=${API_KEY}&language=en-US`)
+    .get(
+      `${BASE_URL}/movie/${movieId}/credits?api_key=${API_KEY}&language=en-US`,
+    )
     .then(({ data }) => data)
     .catch(error => error);
 };
@@ -31,7 +33,9 @@ const fetchReviews = movieId => {
 };
 const fetchSearchMovies = ({ searchQuery = '' }) => {
   return axios
-    .get(`${BASE_URL}/search/movie?query=${searchQuery}&api_key=${API_KEY}&language=en-US&page=1&include_adult=false`)
+    .get(
+      `${BASE_URL}/search/movie?query=${searchQuery}&api_key=${API_KEY}&language=en-US&page=1&include_adult=false`,
+    )
     .then(({ data }) => data)
     .catch(error => error);
 };
